@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "23.0.0"
 
     defaultConfig {
         applicationId "com.wesleyreisz.mymusic"
-        minSdkVersion 15
-        targetSdkVersion 20
+        minSdkVersion 23
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
