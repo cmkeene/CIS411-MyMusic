@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.wesleyreisz.mymusic.R;
 import com.wesleyreisz.mymusic.model.Song;
@@ -28,9 +29,18 @@ public class SongAdapter extends ArrayAdapter<Song> {
     public View getView(int position, View view, ViewGroup parent) {
         if(view==null){
             LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.fragment_music_list, parent, false);
+            view = inflater.inflate(R.layout.listview_each_song, parent, false);
         }
         final Song song = mEntries.get(position);
+        TextView songTitle = (TextView) view.findViewById(R.id.songTitle);
+        songTitle.setText(song.getSongTitle());
+
+        TextView songArtist = (TextView) view.findViewById(R.id.songArtist);
+        songArtist.setText(song.getArtistName());
+
+        TextView songAlbum = (TextView) view.findViewById(R.id.songAlbum);
+        songAlbum.setText(song.getAlbumTitle());
+
         return view;
     }
 }
